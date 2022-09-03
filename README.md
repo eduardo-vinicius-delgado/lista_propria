@@ -1,6 +1,6 @@
 # lista_propria
 
-level: Easy
+Level: Easy
 
 **Implementação própria de uma estrutura de dados do tipo lista**
 
