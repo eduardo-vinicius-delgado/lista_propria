@@ -1,6 +1,4 @@
-package application;
-
-import entities.No;
+package entities;
 
 public class Lista {
 
@@ -78,23 +76,25 @@ public class Lista {
 		No noAuxiliar1 = new No();
 		No noAnterior = new No();
 		noAuxiliar = getPrimeiroNo();
+		int dado;
 		if(posicao==0) {
 			noAuxiliar1 = primeiroNo;
+			dado=primeiroNo.getValorInt();
 			setPrimeiroNo(noAuxiliar.getProximoNo());
 			noAuxiliar1.setProximoNo(null);
 			diminuirTamanho();
-			return 1;
 		}else {
 			for(int i = 0; i < posicao ; i++) {
 				noAnterior = noAuxiliar;
 				noAuxiliar = noAuxiliar.getProximoNo();
 			}
 			noAuxiliar1 = noAnterior.getProximoNo();
+			dado = noAuxiliar1.getValorInt();
 			noAnterior.setProximoNo(noAuxiliar.getProximoNo());
 			noAuxiliar.setProximoNo(null);
 			diminuirTamanho();
-			return 1;
 		}
+		return dado;
 	}
 	
 	public Integer retornarValor(Integer posicao) {
